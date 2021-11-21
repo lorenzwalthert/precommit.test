@@ -41,7 +41,7 @@ jobs:
           mkdir -p .local/R/site-packages
           echo "R_LIBS_USER=`pwd`/.local/R/site-packages" >> $GITHUB_ENV
       - name: Run pre-commit
-        uses: pre-commit/action@v2.0.0
+        uses: pre-commit/action@v2.0.3
 
       - name: Commit files
         if: failure() && startsWith(github.ref, 'refs/heads')
