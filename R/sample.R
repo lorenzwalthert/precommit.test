@@ -1,1 +1,4 @@
-1 + 1
+#' Stuff
+a <- function() {
+  NULL
+}
