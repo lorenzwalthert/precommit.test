@@ -2,5 +2,5 @@
 #' Things
 #' @export
 a <- function() {
-NULL
+  NULL
 }
