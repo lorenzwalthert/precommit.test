@@ -49,8 +49,6 @@ jobs:
           restore-keys: |
             precommit-${{env.UBUNTU_VERSION}}-renv-
 
-      - name: Cache pre-commit
-        uses: actions/cache@v2
       - name: Install R packages
         run: |
           if (!requireNamespace("renv", quietly = TRUE)) install.packages("renv")
