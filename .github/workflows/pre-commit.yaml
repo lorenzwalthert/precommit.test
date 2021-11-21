@@ -51,9 +51,6 @@ jobs:
 
       - name: Cache pre-commit
         uses: actions/cache@v2
-        with:
-          path: ~/.cache/pre-commit
-          key: pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}-
       - name: Install R packages
         run: |
           if (!requireNamespace("renv", quietly = TRUE)) install.packages("renv")
