@@ -2,10 +2,12 @@
 % Please edit documentation in R/sample.R
 \name{a}
 \alias{a}
-\title{Stuff}
+\title{Stuff
+Things}
 \usage{
 a()
 }
 \description{
 Stuff
+Things
 }
