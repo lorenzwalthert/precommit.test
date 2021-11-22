@@ -40,34 +40,8 @@ jobs:
           echo "UBUNTU_VERSION=`grep DISTRIB_RELEASE /etc/lsb-release | sed 's/.*=//g'`" >> $GITHUB_ENV
           mkdir -p .local/R/site-packages
           echo "R_LIBS_USER=`pwd`/.local/R/site-packages" >> $GITHUB_ENV
-          rm -rf ~/.cache/pre-commit
-      - name: Install R packages
-        run: |
-          # restore global package cache
-          if (!requireNamespace("renv", quietly = TRUE)) install.packages("renv")
-          renv::install('lorenzwalthert/precommit')
-          renv::install(c(
-            "desc",
-            "digest",
-            "git2r",
-            "glue",
-            "knitr",
-            "lintr",
-            "mockery",
-            "pkgload",
-            "reticulate",
-            "rmarkdown",
-            "roxygen2",
-            "spelling",
-            "styler",
-            "testthat",
-            "usethis"
-            )
-          )
-        shell: Rscript {0}
       - name: Run pre-commit
         uses: pre-commit/action@v2.0.3
-
       - name: Commit files
         if: failure() && startsWith(github.ref, 'refs/heads')
         run: |
