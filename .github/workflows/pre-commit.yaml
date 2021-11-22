@@ -44,7 +44,7 @@ jobs:
         run: |
           # restore global package cache
           if (!requireNamespace("renv", quietly = TRUE)) install.packages("renv")
-          renv::settings$package.dependency.fields(c("Imports", "Depends"))
+          renv::settings$package.dependency.fields(c("Imports", "Depends", "Suggests"))
           renv::install('lorenzwalthert/precommit')
         shell: Rscript {0}
       - name: Run pre-commit
