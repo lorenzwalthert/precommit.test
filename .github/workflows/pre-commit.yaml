@@ -34,15 +34,6 @@ jobs:
         with:
           python-version: "3.8"
           architecture: "x64"
-
-      - name: Cache R packages
-        uses: actions/cache@v2
-        if: startsWith(runner.os, 'Linux')
-        with:
-          path: ~/.local/share/renv
-          key: precommit-${{env.UBUNTU_VERSION}}-
-          restore-keys: |
-            precommit-${{env.UBUNTU_VERSION}}-
       - name: Run pre-commit
         uses: pre-commit/action@v2.0.3
       - name: Commit files
