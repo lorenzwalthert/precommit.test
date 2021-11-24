@@ -1,6 +1,6 @@
 #' Stuff
 #' Things
 #' @export
-av <- function() {
+avf <- function() {
   NULL
 }
