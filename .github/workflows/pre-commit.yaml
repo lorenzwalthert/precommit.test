@@ -35,6 +35,8 @@ jobs:
           architecture: "x64"
       - name: Run pre-commit
         uses: pre-commit/action@v2.0.3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit files
         if: failure() && startsWith(github.ref, 'refs/heads')
         run: |
